@@ -3,6 +3,10 @@ const resolvers = {
     lugares: async (_, __, { db }) => {
       const [rows] = await db.execute('SELECT * FROM lugares');
       return rows;
+    },
+    lineas: async (_, __, { db }) => {
+      const [rows] = await db.execute('SELECT * FROM lineas_transporte');
+      return rows;
     }
   }
 };
