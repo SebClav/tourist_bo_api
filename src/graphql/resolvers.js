@@ -7,6 +7,10 @@ const resolvers = {
     lineas: async (_, __, { db }) => {
       const [rows] = await db.execute('SELECT * FROM lineas_transporte');
       return rows;
+    },
+    rutas: async (_, __, { db }) => {
+      const [rows] = await db.execute('SELECT * FROM rutas');
+      return rows;
     }
   }
 };
