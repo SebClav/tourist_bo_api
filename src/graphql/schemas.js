@@ -12,7 +12,7 @@ const typeDefs = gql`
     descripcion: String
   }
 
-  # Places Type
+  # TransportLine Type
   type LineaDeTransporte {
     id: ID!
     nombre: String!
@@ -21,10 +21,19 @@ const typeDefs = gql`
     descripcion: String
   }
 
+  # Routes Type
+  type Ruta {
+    id: ID!
+    linea_id: String!
+    tipo: String!
+    nombre: String!
+    descripcion: String
+  }
 
   type Query {
     lugares: [Lugar]
     lineas: [LineaDeTransporte]
+    rutas: [Ruta]
   }
 `;
 
