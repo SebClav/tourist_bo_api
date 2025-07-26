@@ -30,10 +30,26 @@ const typeDefs = gql`
     descripcion: String
   }
 
+  # Coordinates Type
+  type Coordenada {
+    lat: Float!
+    lng: Float!
+  }
+
+  # TracedRoutes Type
+  type RutaTrazada {
+    id: ID!
+    coordenadas: [Coordenada!]!
+  }
+
   type Query {
     lugares: [Lugar]
     lineas: [LineaDeTransporte]
     rutas: [Ruta]
+    coordenada: [Coordenada]
+    rutastrazadas: [RutaTrazada]
+
+    obtenerRuta(nombreRuta: String!): RutaTrazada
   }
 `;
 
