@@ -50,7 +50,6 @@ const typeDefs = gql`
     coordenada: [Coordenada]
     rutastrazadas: [RutaTrazada]
 
-    obtenerRuta(nombreRuta: String!): RutaTrazada
   }
 `;
 
