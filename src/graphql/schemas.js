@@ -28,6 +28,7 @@ const typeDefs = gql`
     tipo: String!
     nombre: String!
     descripcion: String
+    obtenerRuta: RutaTrazada
   }
 
   # Coordinates Type
