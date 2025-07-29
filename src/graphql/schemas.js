@@ -19,6 +19,7 @@ const typeDefs = gql`
     tipo: String!
     categoria: String!
     descripcion: String
+    rutas: [Ruta]
   }
 
   # Routes Type
