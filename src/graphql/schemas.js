@@ -12,6 +12,28 @@ const typeDefs = gql`
     descripcion: String
   }
 
+
+  input CreateLugarInput {
+    nombre: String!
+    tipo: String!
+    latitud: Float!
+    longitud: Float!
+    descripcion: String
+  }
+
+  input UpdateLugarInput {
+    id: ID!
+    nombre: String!
+    tipo: String!
+    latitud: Float!
+    longitud: Float!
+    descripcion: String
+  }
+
+  input DeleteLugarInput {
+    id: ID!
+  }
+
   # TransportLine Type
   type LineaDeTransporte {
     id: ID!
