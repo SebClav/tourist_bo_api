@@ -76,6 +76,28 @@ const typeDefs = gql`
     obtenerRuta: RutaTrazada
   }
 
+    
+  input CreateRutaInput {
+    linea_id: String!
+    tipo: String!
+    nombre: String!
+    descripcion: String
+    obtenerRuta: RutaTrazada
+  }
+
+  input UpdateRutaInput {
+    id: ID!
+    linea_id: String!
+    tipo: String!
+    nombre: String!
+    descripcion: String
+    obtenerRuta: RutaTrazada
+  }
+
+  input DeleteRutaInput {
+    id: ID!
+  }
+
   # Coordinates Type
   type Coordenada {
     lat: Float!
