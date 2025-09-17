@@ -44,6 +44,28 @@ const typeDefs = gql`
     rutas: [Ruta]
   }
 
+  
+  input CreateLineaDeTransporteInput {
+    nombre: String!
+    tipo: String!
+    categoria: String!
+    descripcion: String
+    rutas: [Ruta]
+  }
+
+  input UpdateLineaDeTransporteInput {
+    id: ID!
+    nombre: String!
+    tipo: String!
+    categoria: String!
+    descripcion: String
+    rutas: [Ruta]
+  }
+
+  input DeleteLineaDeTransporteInput {
+    id: ID!
+  }
+
   # Routes Type
   type Ruta {
     id: ID!
