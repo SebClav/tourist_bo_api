@@ -131,6 +131,10 @@ const typeDefs = gql`
     createLineaTranporte(input: CreateLineaDeTransporteInput!): LineaDeTransporte!
     updateLineaTranporte(input: UpdateLineaDeTransporteInput!): LineaDeTransporte!
     deleteLineaTranporte(input: DeleteLineaDeTransporteInput!): LineaDeTransporte!
+    # Routes Mutation
+    createRuta(input: CreateRutaInput!): Ruta!
+    updateRuta(input: UpdateRutaInput!): Ruta!
+    deleteRuta(input: DeleteRutaInput!): Ruta!
   }
 `;
 
