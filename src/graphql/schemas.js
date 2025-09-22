@@ -110,6 +110,8 @@ const typeDefs = gql`
     coordenadas: [Coordenada!]!
   }
 
+
+  # Queries
   type Query {
     lugares: [Lugar]
     lineas: [LineaDeTransporte]
