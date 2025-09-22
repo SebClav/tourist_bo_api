@@ -127,6 +127,10 @@ const typeDefs = gql`
     createLugar(input: CreateLugarInput!): Lugar!
     updateLugar(input: UpdateLugarInput!): Lugar!
     deleteLugar(input: DeleteLugarInput!): Lugar!
+    # Transport Lines Mutation
+    createLineaTranporte(input: CreateLineaDeTransporteInput!): Lugar!
+    updateLineaTranporte(input: UpdateLineaDeTransporteInput!): Lugar!
+    deleteLineaTranporte(input: DeleteLineaDeTransporteInput!): Lugar!
   }
 `;
 
