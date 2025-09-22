@@ -128,9 +128,9 @@ const typeDefs = gql`
     updateLugar(input: UpdateLugarInput!): Lugar!
     deleteLugar(input: DeleteLugarInput!): Lugar!
     # Transport Lines Mutation
-    createLineaTranporte(input: CreateLineaDeTransporteInput!): Lugar!
-    updateLineaTranporte(input: UpdateLineaDeTransporteInput!): Lugar!
-    deleteLineaTranporte(input: DeleteLineaDeTransporteInput!): Lugar!
+    createLineaTranporte(input: CreateLineaDeTransporteInput!): LineaDeTransporte!
+    updateLineaTranporte(input: UpdateLineaDeTransporteInput!): LineaDeTransporte!
+    deleteLineaTranporte(input: DeleteLineaDeTransporteInput!): LineaDeTransporte!
   }
 `;
 
