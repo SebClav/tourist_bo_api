@@ -120,6 +120,14 @@ const typeDefs = gql`
     rutastrazadas: [RutaTrazada]
 
   }
+
+  # Mutations 
+  type Mutation {
+    # Places Mutation
+    createLugar(input: CreateLugarInput!): Lugar!
+    updateLugar(input: UpdateLugarInput!): Lugar!
+    deleteLugar(input: DeleteLugarInput!): Lugar!
+  }
 `;
 
 export default typeDefs;
