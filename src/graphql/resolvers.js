@@ -116,7 +116,19 @@ const resolvers = {
     return rows[0];
       
     },
-
+    //Delete Route Graphql Mutation
+    deleteRuta: async (_, {input}, { db }) => {
+      const { id } = input;
+      await db.execute(
+        `DELETE FROM lineas_transporte 
+         WHERE id = ?`,
+        [id]
+      );
+    
+    const [rows] = await db.execute('SELECT * FROM lineas_transporte');
+    return rows[0];
+      
+    }
   },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
