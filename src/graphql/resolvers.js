@@ -70,6 +70,7 @@ const resolvers = {
     const [rows] = await db.execute('SELECT * FROM lugares WHERE id = ?', [id]);
     return rows[0];
       
+    }
   },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
