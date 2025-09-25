@@ -43,6 +43,23 @@ const resolvers = {
       return rutasCombinadas;
     },
   },
+  Mutation:{
+    createLugar: async (_, {input}, { db }) => {
+      const { nombre, tipo, latitud, longitud, descripcion } = input;
+      const [result] = await db.execute(
+        `INSERT INTO lugares (nombre, tipo, latitud, longitud, descripcion) 
+         VALUES (?, ?, ?, ?, ?)`,
+        [nombre, tipo, latitud, longitud, descripcion]
+      );
+      return {
+        nombre,
+        tipo,
+        latitud,
+        longitud,
+        descripcion,
+      }; 
+    } 
+  },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
       const [rows] = await db.execute("SELECT * FROM rutas WHERE linea_id = ?", [parent.id]);
