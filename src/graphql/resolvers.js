@@ -103,7 +103,20 @@ const resolvers = {
         descripcion
       }; 
     },
+    //Update Route Graphql Mutation
+    updateRuta: async (_, {input}, { db }) => {
+      const { nombre, tipo, categoria, descripcion, id } = input;
+      await db.execute(
+        `UPDATE lineas_transporte SET nombre = ?, tipo = ?, categoria = ?, descripcion = ?) 
+         WHERE id = ?`,
+        [nombre, tipo, latitud, longitud, descripcion, id]
+      );
     
+    const [rows] = await db.execute('SELECT * FROM lineas_transporte WHERE id = ?', [id]);
+    return rows[0];
+      
+    },
+
   },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
