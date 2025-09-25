@@ -70,6 +70,19 @@ const resolvers = {
     const [rows] = await db.execute('SELECT * FROM lugares WHERE id = ?', [id]);
     return rows[0];
       
+    },
+
+    deleteLugar: async (_, {input}, { db }) => {
+      const { id } = input;
+      await db.execute(
+        `DELETE FROM lugares 
+         WHERE id = ?`,
+        [id]
+      );
+    
+    const [rows] = await db.execute('SELECT * FROM lugares');
+    return rows[0];
+      
     }
   },
   LineaDeTransporte: {
