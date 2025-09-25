@@ -87,7 +87,23 @@ const resolvers = {
     const [rows] = await db.execute('SELECT * FROM lugares');
     return rows[0];
       
-    }
+    } ,
+    //Create Route Graphql Mutation
+    createRuta: async (_, {input}, { db }) => {
+      const { nombre, tipo, categoria, descripcion } = input;
+      const [result] = await db.execute(
+        `INSERT INTO lineas_transporte (nombre, tipo,categoria, descripcion) 
+         VALUES (?, ?, ?, ?, ?)`,
+        [nombre, tipo, categoria, descripcion]
+      );
+      return {
+        nombre,
+        tipo,
+        categoria,
+        descripcion
+      }; 
+    },
+    
   },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
