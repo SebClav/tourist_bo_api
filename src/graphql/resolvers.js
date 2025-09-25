@@ -2,6 +2,7 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const resolvers = {
   Query: {
+    //Select Place Graphql Mutation
     lugares: async (_, __, { db }) => {
       const [rows] = await db.execute('SELECT * FROM lugares');
       return rows;
@@ -44,6 +45,7 @@ const resolvers = {
     },
   },
   Mutation:{
+    //Create Place Graphql Mutation
     createLugar: async (_, {input}, { db }) => {
       const { nombre, tipo, latitud, longitud, descripcion } = input;
       const [result] = await db.execute(
@@ -59,6 +61,7 @@ const resolvers = {
         descripcion,
       }; 
     },
+    //Update Place Graphql Mutation
     updateLugar: async (_, {input}, { db }) => {
       const { nombre, tipo, latitud, longitud, descripcion, id } = input;
       await db.execute(
@@ -71,7 +74,7 @@ const resolvers = {
     return rows[0];
       
     },
-
+    //Delete Place Graphql Mutation
     deleteLugar: async (_, {input}, { db }) => {
       const { id } = input;
       await db.execute(
