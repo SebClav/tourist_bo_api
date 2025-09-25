@@ -58,7 +58,18 @@ const resolvers = {
         longitud,
         descripcion,
       }; 
-    } 
+    },
+    updateLugar: async (_, {input}, { db }) => {
+      const { nombre, tipo, latitud, longitud, descripcion, id } = input;
+      await db.execute(
+        `UPDATE lugares SET nombre = ?, tipo = ?, latitud = ?, longitud = ?, descripcion = ?) 
+         WHERE id = ?`,
+        [nombre, tipo, latitud, longitud, descripcion, id]
+      );
+    
+    const [rows] = await db.execute('SELECT * FROM lugares WHERE id = ?', [id]);
+    return rows[0];
+      
   },
   LineaDeTransporte: {
     rutas: async (parent, _, { db }) => {
