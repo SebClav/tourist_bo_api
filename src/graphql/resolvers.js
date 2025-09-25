@@ -2,11 +2,12 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const resolvers = {
   Query: {
-    //Select Place Graphql Mutation
+    //Select Place Graphql Query
     lugares: async (_, __, { db }) => {
       const [rows] = await db.execute('SELECT * FROM lugares');
       return rows;
-    },
+    }, 
+    //Select Transport Lines Query
     lineas: async (_, __, { db }) => {
       const [rows] = await db.execute('SELECT * FROM lineas_transporte');
       return rows;
