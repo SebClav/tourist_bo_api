@@ -50,7 +50,7 @@ const typeDefs = gql`
     tipo: String!
     categoria: String!
     descripcion: String
-    rutas: [Ruta]
+    rutas: [RutaInput]
   }
 
   input UpdateLineaDeTransporteInput {
@@ -59,7 +59,7 @@ const typeDefs = gql`
     tipo: String!
     categoria: String!
     descripcion: String
-    rutas: [Ruta]
+    rutas: [RutaInput]
   }
 
   input DeleteLineaDeTransporteInput {
@@ -82,7 +82,7 @@ const typeDefs = gql`
     tipo: String!
     nombre: String!
     descripcion: String
-    obtenerRuta: RutaTrazada
+    obtenerRuta: RutaTrazadaInput
   }
 
   input UpdateRutaInput {
@@ -91,7 +91,7 @@ const typeDefs = gql`
     tipo: String!
     nombre: String!
     descripcion: String
-    obtenerRuta: RutaTrazada
+    obtenerRuta: RutaTrazadaInput
   }
 
   input DeleteRutaInput {
@@ -108,6 +108,23 @@ const typeDefs = gql`
   type RutaTrazada {
     id: ID!
     coordenadas: [Coordenada!]!
+  }
+
+  input CoordenadaInput {
+    lat: Float!
+    lng: Float!
+  }
+
+  input RutaTrazadaInput {
+    coordenadas: [CoordenadaInput!]!
+  }
+
+  input RutaInput {
+    linea_id: ID!       
+    tipo: String!
+    nombre: String!
+    descripcion: String
+    obtenerRuta: RutaTrazadaInput
   }
 
 
